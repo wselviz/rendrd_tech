@@ -11,7 +11,13 @@
 .hero-deliverables li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;background:var(--accent)}
 .hero-deliverables strong{font-weight:700}
 .is-awaiting-focus{filter:none;transform:none}
-@media(min-width:1101px) and (max-height:760px){.strategy-hero{height:auto}}
+@media(min-width:1101px) and (max-height:800px){
+ .strategy-copy{top:27%;padding-block:18px}
+ .strategy-copy>p.hero-category{margin-bottom:14px}
+ .strategy-copy h2{font-size:clamp(36px,3.2vw,48px);margin-bottom:16px}
+ .strategy-copy>p:not(.hero-category){font-size:20px;margin-bottom:18px}
+ .hero-deliverables{gap:8px;margin-bottom:22px}
+}
 @media(max-width:1100px){
  .strategy-hero{--hero-height:auto;height:auto}
  .strategy-frame{height:auto;display:flex;flex-direction:column;padding:24px var(--gutter) 35px;overflow:hidden}
