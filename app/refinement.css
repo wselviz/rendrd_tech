@@ -1,0 +1,78 @@
+/* Shared vector controls render consistently without platform emoji fonts. */
+svg.arrow{width:20px;height:20px;flex:none;vertical-align:middle}
+/* Keyboard focus must arrive with the viewport, including distant video controls. */
+html:has(:focus-visible){scroll-behavior:auto}
+.plus-icon{flex:none;vertical-align:middle}
+.menu-button{align-items:center;gap:18px}
+.footer-bottom>a:last-child{display:inline-flex;align-items:center;gap:12px;min-height:44px}
+.case-next svg.arrow{width:42px;height:42px}
+.nba-film-toggle{align-items:center;padding-top:0}
+.nba-film-toggle svg{width:18px;height:18px;flex:none}
+.nba-film-play svg{width:22px;height:22px;margin-left:3px}
+.project-image img{image-rendering:auto;object-position:var(--thumb-position,center)}
+.project-image picture{display:block;width:100%;height:100%}
+.project-image picture img{width:100%;height:100%}
+
+@media(max-width:760px){
+ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:24px}
+ .header{height:66px;gap:20px}
+ .menu-button{display:inline-flex;font-size:15px;padding:8px 12px;min-height:42px}
+ .strategy-frame{padding-top:12px;padding-bottom:24px}
+ .strategy-copy{margin:10px 0 24px}
+ .strategy-copy>p.hero-category{margin-bottom:14px;font-size:15px}
+ .strategy-copy h2{font-size:clamp(30px,8.3vw,40px);line-height:1.08;margin-bottom:17px}
+ .strategy-copy>p:not(.hero-category){font-size:18px;line-height:1.45;margin-bottom:20px}
+ .hero-deliverables{gap:9px;margin-bottom:22px}
+ .hero-deliverables li{font-size:16px;line-height:1.4}
+ .hero-deliverables strong{display:inline}
+ .hero-deliverables li>span{display:none}
+ .strategy-actions{gap:12px;align-items:stretch}
+ .strategy-actions>.pill{width:100%;justify-content:space-between;min-height:48px;padding:12px 16px}
+ .strategy-work-link{min-height:44px;gap:14px}
+ .identity-stage{height:210px;max-width:520px;margin:0 auto 14px}
+ .identity-stage h1{font-size:clamp(40px,12vw,63px)}
+ .identity-letter:nth-of-type(n+8){font-size:1em}
+ .identity-letter-0{left:1%;top:7%}.identity-letter-1{left:17%;top:7%}.identity-letter-2{left:33%;top:7%}.identity-letter-3{left:49%;top:7%}.identity-letter-4{left:65%;top:7%}.identity-letter-5{left:81%;top:7%}
+ .identity-letter-6{left:13%;top:48%}.identity-letter-7{left:29%;top:48%}.identity-letter-8{left:45%;top:48%}.identity-letter-9{left:61%;top:48%}.identity-letter-10{left:77%;top:48%}
+ .identity-toggle{bottom:16px;width:36px;height:36px;min-height:36px;background:var(--ground)}
+ .signal-field{height:245px;opacity:.8}
+ .strategy-frame::after{bottom:22px}
+ .trust-section{padding-top:12px;padding-bottom:30px}
+ .trust-section .clients{margin-top:0;padding:20px 0}
+ .client-marks{gap:8px 20px}
+ .client-marks li{min-height:55px}
+ .project-image,.project-1 .project-image,.project-5 .project-image{aspect-ratio:4/3}
+ .project-category{font-size:13px;padding:7px 10px;max-width:80%}
+ .project-meta{display:block}
+ .project-meta p{font-size:16px}
+ .project-meta>span{display:block;text-align:left;max-width:none;margin-top:7px;color:var(--muted);font-size:14px}
+ .project-card h3{font-size:27px;line-height:1.15;margin-top:14px}
+ .project-summary{font-size:17px;line-height:1.5;margin-top:12px}
+ .service h3 button{font-size:21px;gap:16px}
+ .service-mobile-proof{gap:12px;min-width:0}
+ .service-mobile-proof>span{min-width:0;font-size:16px}
+ .service-mobile-proof small{font-size:14px;line-height:1.5}
+ .service-mobile-proof .arrow{margin-left:6px;width:16px;height:16px}
+ .contact-grid form{padding:18px 0;border:0}
+ .contact-grid textarea,.contact-grid select{font-size:16px;min-height:48px}
+ .form-bottom{align-items:flex-start;flex-direction:column;gap:18px}
+ .form-bottom .pill{width:100%;justify-content:space-between}
+ .footer h2{font-size:clamp(38px,10.5vw,58px);line-height:1.07}
+ .footer-bottom{flex-wrap:wrap}
+ .footer-bottom>a:last-child{font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){.signal-field{opacity:.18}}
+
+/* Preserve the campaign composition instead of forcing portrait work into a landscape crop. */
+.project-nike-air-max .project-image{aspect-ratio:1280/1006}
+.project-raptors-vince-carter .project-image{aspect-ratio:4/5}
+.project-nike-air-max .project-image img,.project-raptors-vince-carter .project-image img{object-fit:contain}
+.project-category{background:var(--ground);color:var(--ink)}
+.footer h2{color:var(--ink);-webkit-text-stroke:0}
+.nba-workshops{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,480px);gap:60px;align-items:center;border-top:1px solid var(--line)}
+.nba-workshops h2{font:600 clamp(32px,4vw,60px)/1.08 Archivo,Arial,sans-serif;letter-spacing:-.045em;max-width:650px}
+.nba-workshops p{font-size:20px;line-height:1.55;max-width:620px;margin-top:24px}
+.nba-workshops figure{margin:0;max-width:480px}
+.nba-workshops img{width:100%;height:auto}
+.nba-workshops figcaption{font-size:16px;line-height:1.5;color:var(--muted);margin-top:16px}
+@media(max-width:760px){.nba-workshops{grid-template-columns:1fr;gap:28px}.nba-workshops p{font-size:18px}.nba-workshops figure{width:100%}}

@@ -2,10 +2,9 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "./link";
 import { site, services } from "./data";
+import { Arrow, PlusIcon } from "./icons";
 
-export function Arrow({ diagonal = false }: { diagonal?: boolean }) {
-  return <span className="arrow" aria-hidden="true">{diagonal ? "↗" : "↗"}</span>;
-}
+export { Arrow };
 export function Header() {
   const [open, setOpen] = useState(false);
   const menu = useRef<HTMLDialogElement>(null);
@@ -15,9 +14,9 @@ export function Header() {
       <Link href="/#work">Selected work</Link><Link href="/#capabilities">Capabilities</Link><Link href="/#about">About</Link>
     </nav>
     <Link className="pill header-cta" href="/#contact">Let's talk <Arrow /></Link>
-    <button className="menu-button" onClick={() => { menu.current?.showModal(); setOpen(true); }} aria-expanded={open} aria-controls="mobile-menu">Menu <span aria-hidden="true">+</span></button>
+    <button className="menu-button" onClick={() => { menu.current?.showModal(); setOpen(true); }} aria-expanded={open} aria-controls="mobile-menu">Menu <PlusIcon /></button>
     <dialog id="mobile-menu" className="mobile-menu" ref={menu} onClose={() => setOpen(false)}>
-      <div><span className="wordmark">RENDRD</span><button className="pill" onClick={() => menu.current?.close()}>Close ×</button></div>
+      <div><span className="wordmark">RENDRD</span><button className="pill" onClick={() => menu.current?.close()}>Close <PlusIcon close /></button></div>
       <nav aria-label="Mobile navigation">{[["Selected work","work"],["Capabilities","capabilities"],["About","about"],["Let's talk","contact"]].map(([label,id]) => <Link key={id} href={"/#" + id} onClick={() => menu.current?.close()}>{label}<Arrow /></Link>)}</nav>
     </dialog>
   </header>;
@@ -69,6 +68,6 @@ export function Footer({ initialService }: { initialService?: string }) {
         <div className="form-bottom"><span>Opens a draft in your email app.</span><button className="pill" type="submit">Start a conversation <Arrow /></button></div>
       </form>
     </div>
-    <div className="footer-bottom"><Link className="wordmark" href="/">RENDRD<span>MEDIA</span></Link><span>© {new Date().getFullYear()} RENDRD Media</span><a href="#main">Back to top ↑</a></div>
+    <div className="footer-bottom"><Link className="wordmark" href="/">RENDRD<span>MEDIA</span></Link><span>© {new Date().getFullYear()} RENDRD Media</span><a href="#main">Back to top <Arrow direction="up" /></a></div>
   </footer>;
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { Arrow, PlayIcon, PauseIcon } from "./icons";
 
 export type NBAFilm = {
   id: string;
@@ -8,7 +9,7 @@ export type NBAFilm = {
   detail: string;
   duration: string;
   wide?: boolean;
-  namespace?: "nba" | "nike";
+  namespace?: "nba" | "nike" | "raptors" | "artechouse" | "neurogenesis";
   aspect?: string;
 };
 
@@ -67,6 +68,9 @@ export function NBAFilmPlayer({ film, featured = false }: { film: NBAFilm; featu
       document.removeEventListener("visibilitychange", hidden);
       reduced.removeEventListener("change", motionChanged);
       player.pause();
+      // Release Safari's media connection when leaving the project, as well as when switching films.
+      player.removeAttribute("src");
+      player.load();
     };
   }, [featured, start]);
 
@@ -85,11 +89,11 @@ export function NBAFilmPlayer({ film, featured = false }: { film: NBAFilm; featu
         onPlay={() => { setPlaying(true); setStarted(true); }} onPause={() => setPlaying(false)}
         onLoadedMetadata={() => { if (video.current && resumeAt.current > 0) video.current.currentTime = resumeAt.current; }}
         onEnded={() => setPlaying(false)} onError={() => { if (video.current?.getAttribute("src")) setFailed(true); }} />
-      {!started && !failed && <button type="button" className="nba-film-play" onClick={toggle} aria-label={`Play ${film.title}`}><span aria-hidden="true">▶</span></button>}
+      {!started && !failed && <button type="button" className="nba-film-play" onClick={toggle} aria-label={`Play ${film.title}`}><PlayIcon /></button>}
     </div>
     <figcaption>
       <div><Heading>{film.title}</Heading><p>{film.detail} <span aria-hidden="true">/</span> {film.duration}</p></div>
-      {failed ? <a className="nba-film-toggle" href={src}>Open film ↗</a> : <button type="button" className="nba-film-toggle" onClick={toggle} aria-label={`${playing ? "Pause" : "Play"} film: ${film.title}`}>{playing ? "Pause" : "Play"} <span aria-hidden="true">{playing ? "Ⅱ" : "↗"}</span></button>}
+      {failed ? <a className="nba-film-toggle" href={src}>Open film <Arrow /></a> : <button type="button" className="nba-film-toggle" onClick={toggle} aria-label={`${playing ? "Pause" : "Play"} film: ${film.title}`}>{playing ? "Pause" : "Play"}{playing ? <PauseIcon /> : <PlayIcon />}</button>}
     </figcaption>
   </figure>;
 }

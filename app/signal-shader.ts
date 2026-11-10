@@ -46,9 +46,9 @@ export function createSignalShader(canvas: HTMLCanvasElement) {
       // Leave the sales message optically clean; detail lives in the letter field.
       float safe=1.-smoothstep(.30,.43,uv.x)*(1.-smoothstep(.57,.77,uv.y));
       float edge=smoothstep(.01,.1,uv.x)*(1.-smoothstep(.96,1.,uv.x));
-      float strength=(contour*.035+marks*.16)*safe*edge*(1.-u_progress*.4);
+      float strength=(contour*.19+marks*.42)*safe*edge*(1.-u_progress*.25);
       vec3 ink=mix(vec3(.52,.19,.12),vec3(1.,.42,.25),u_dark);
-      float alpha=clamp(strength,0.,.2);
+      float alpha=clamp(strength,0.,.38);
       gl_FragColor=vec4(ink*alpha,alpha);
     }
   `);

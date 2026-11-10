@@ -10,8 +10,8 @@ const desktop = {
  end: [[.06,.10],[.19,.27],[.07,.45],[.07,.665],[.205,.665],[.215,.865],[.405,.115],[.54,.10],[.67,.115],[.80,.10],[.92,.115]],
 };
 const mobile = {
- start: [[.12,.10],[.375,.275],[.13,.465],[.13,.69],[.395,.65],[.41,.94],[.67,.15],[.89,.07],[.71,.35],[.92,.35],[.90,.54]],
- end: [[.125,.10],[.365,.265],[.135,.45],[.135,.67],[.39,.67],[.40,.92],[.66,.13],[.88,.13],[.70,.33],[.915,.33],[.89,.53]],
+ start: [[.09,.24],[.25,.34],[.405,.22],[.56,.36],[.72,.24],[.88,.34],[.21,.70],[.365,.60],[.52,.75],[.675,.63],[.83,.72]],
+ end: [[.09,.29],[.25,.29],[.405,.29],[.56,.29],[.72,.29],[.88,.29],[.21,.68],[.365,.68],[.52,.68],[.675,.68],[.83,.68]],
 };
 const depth = [-75,55,-45,-35,40,-40,110,-105,75,-65,-60];
 const tilt = [[5,-13,-2],[-6,12,3],[4,-10,-2],[-5,11,2],[6,-12,-2],[-4,10,2],[-5,12,-2],[5,-14,2],[-5,10,-2],[4,-12,2],[-4,10,-2]];
@@ -109,11 +109,11 @@ export default function StrategyHero(){
    if(dead)return;
    width=area.clientWidth;height=area.clientHeight;isMobile=innerWidth<=760;
    sizes=nodes.map(n=>({w:n.offsetWidth,h:n.offsetHeight}));
-   start=outer.getBoundingClientRect().top+window.scrollY;
+   start=(isMobile?area:outer).getBoundingClientRect().top+window.scrollY-(isMobile?innerHeight*.65:0);
    const travel=outer.offsetHeight-frame.offsetHeight;
    range=isMobile||travel<1?Math.min(260,height*.62):travel;
    if(!reduced&&!saveData&&!shader)shader=createSignalShader(canvas);
-   shader?.resize(frame.clientWidth,isMobile?frame.clientHeight*.5:frame.clientHeight);
+   shader?.resize(canvas.parentElement!.clientWidth,canvas.parentElement!.clientHeight);
    schedule();
   };
   const update=()=>{reduced=query.matches;currentPointer={x:0,y:0};if(reduced){shader?.dispose();shader=null;delete canvas.dataset.shader;}measure();};
@@ -147,9 +147,9 @@ export default function StrategyHero(){
     <h2>Technology strategy.<br/><span>Campaigns that connect.</span></h2>
     <p>RENDRD is a consultancy and creative studio. We help your team decide what to adopt, build it, and bring it to market.</p>
     <ul className="hero-deliverables" aria-label="What you can get from RENDRD">
-     <li><strong>A clear roadmap.</strong> Technology choices, priorities, and guardrails.</li>
-     <li><strong>A working demo.</strong> Prototypes and tools your team can put to use.</li>
-     <li><strong>A campaign ready to launch.</strong> Content that makes your offer clear.</li>
+     <li><strong>A clear roadmap.</strong><span> Technology choices, priorities, and guardrails.</span></li>
+     <li><strong>A working demo.</strong><span> Prototypes and tools your team can put to use.</span></li>
+     <li><strong>A campaign ready to launch.</strong><span> Content that makes your offer clear.</span></li>
     </ul>
     <div className="strategy-actions"><a href="#contact" className="pill">Talk about your project <Arrow/></a><a href="#work" className="strategy-work-link">See client work <Arrow/></a></div>
    </div>

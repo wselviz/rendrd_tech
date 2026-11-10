@@ -64,6 +64,10 @@ button:focus-visible,a:focus-visible,select:focus-visible,textarea:focus-visible
   height:var(--mark-height);
   background:currentColor;
   color:var(--ink);
+  -webkit-mask-image:var(--mark-image);
+  -webkit-mask-repeat:no-repeat;
+  -webkit-mask-position:center;
+  -webkit-mask-size:contain;
   mask-image:var(--mark-image);
   mask-repeat:no-repeat;
   mask-position:center;

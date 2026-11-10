@@ -21,3 +21,13 @@ Content integrity: Nike 2M+ ad views and six-year relationship are user supplied
 Original media and private documents stay outside the deployment repository. Contact prepares an email in the visitor's mail application. The user-created public GitHub repository wselviz/rendrd_tech feeds Vercel, with rendrd.tech as canonical origin. Preserve the original Sites source separately.
 
 Verify both themes, 320–2052px layouts, keyboard access, reduced motion, shader fallback, case-study playback and production metadata before publication.
+
+## Campaign media and mobile refinement — 10 November 2026
+
+Keep the established spatial identity and enterprise message. Restore visible contour and sparse ASCII shader detail in the letter field, clipped outside the copy area; maintain the solid copy background and transparent-canvas fallback. On phones, the offer and actions lead, then a compact two-row RENDRD MEDIA field. Vector controls replace Unicode arrows and playback symbols. Filled footer typography improves readability. Case pages stay quiet at idle so the actual campaign films own the motion.
+
+Use original final campaign frames, without upscaling: Nike's fully revealed Air Max product, NBA's Montréal basketball world, Raptors/Bell Sky Slam's finished hero creative, and actual ARTECHOUSE and Sónar installation photography. Responsive 800px homepage and case hero variants reduce mobile transfers. The original low-resolution Nike street documentation remains at its source dimensions and is paired with the sharper animation master.
+
+Raptors/Bell expands into finished campaign, social and kiosk placements, digital likeness/material studies and real-time animation. ARTECHOUSE separates installed footage from panoramic production renders. Neurogenesis separates the live installation/hardware from the Connections, Joy and Fear film sequences. Adobe focuses on documented consultation, workshops, HQ dialogue and panel moderation, using genuine photographs; no invented metrics or product outcomes. All four gain a clear project contribution, process, and practical relevance to a prospective client.
+
+Source downloads, stable Dropbox paths, exact frame selections and private transcripts remain outside this public repo in ../media-library/case-refresh. Only selected optimized media is published. New video is click-to-play, H.264/yuv420p/faststart; only the active player retains a media connection. No stock or generated campaign imagery is substituted.

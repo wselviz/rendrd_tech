@@ -12,8 +12,8 @@ export const site = {
 export const projects = [
   {
     slug: "nike-air-max", client: "Nike", title: "From the feed. To the street.",
-    subtitle: "Campaigns & brand experiences", category: "Campaigns", image: "/media/nike.webp",
-    video: "/media/nike.mp4", alt: "Nike Air Max 95 campaign imagery",
+    subtitle: "Campaigns & brand experiences", category: "Campaigns", image: "/media/nike/hero.webp",
+    video: "/media/nike.mp4", alt: "The complete Nike Air Max 95 Toronto Edition above its illustrated city pedestal",
     discipline: "Campaigns / CGI / Interactive experiences", sourceSlide: 24,
     intro: "Six years of Nike campaigns, from digital billboards and product films to retail and interactive experiences. 2M+ views across Nike ads.",
     context: "An iconic shoe becomes the starting point for a visual story about a city. The Toronto Edition campaign brings product, place, and motion into the same frame.",
@@ -24,7 +24,7 @@ export const projects = [
   },
   {
     slug: "protopica-artechouse", client: "Protopica × ARTECHOUSE", title: "A world you step inside.",
-    subtitle: "Immersive storytelling, New York", category: "Emerging experiences", image: "/media/artechouse.webp",
+    subtitle: "Immersive storytelling, New York", category: "Emerging experiences", image: "/media/artechouse/hero.webp",
     video: "/media/artechouse.mp4", alt: "Protopica visuals filling the immersive ARTECHOUSE space",
     discipline: "World-building / Immersive visuals", sourceSlide: 12,
     intro: "Stories leave the screen in an 18K, 270-degree immersive environment at ARTECHOUSE in New York.",
@@ -35,9 +35,9 @@ export const projects = [
     gallery: ["/media/artechouse-detail.webp"],
   },
   {
-    slug: "raptors-vince-carter", client: "Toronto Raptors × Bell", title: "The game, beyond the court.",
-    subtitle: "Vince Carter AR experience", category: "Campaigns", image: "/media/raptors.webp",
-    video: "/media/raptors.mp4", alt: "Vince Carter augmented reality experience for the Toronto Raptors and Bell",
+    slug: "raptors-vince-carter", client: "Toronto Raptors × Bell", title: "Vince Carter. Larger than life.",
+    subtitle: "Bell Sky Slam / Campaign & AR experience", category: "Campaigns", image: "/media/raptors/hero.webp",
+    video: "/media/raptors.mp4", alt: "Vince Carter mid-dunk in the finished Raptors and Bell Sky Slam campaign",
     discipline: "Augmented reality / 3D / Fan engagement", sourceSlide: 22,
     intro: "An augmented reality experience celebrating Vince Carter, recognized with a 2025 NBA Innovation Award.",
     context: "A major basketball moment becomes an opportunity to involve fans through a new kind of encounter with a sports icon.",
@@ -48,7 +48,7 @@ export const projects = [
   },
   {
     slug: "neurogenesis", client: "Protopica", title: "A story shaped by you.",
-    subtitle: "Neurogenesis, Sónar Barcelona", category: "Emerging experiences", image: "/media/neurogenesis.webp",
+    subtitle: "Neurogenesis, Sónar Barcelona", category: "Emerging experiences", image: "/media/neurogenesis/hero.webp",
     video: "", alt: "Visitor experiencing Protopica Neurogenesis at Sónar Barcelona",
     discipline: "Machine learning / Interactive installation", sourceSlide: 14,
     intro: "An emotionally responsive installation exploring what happens when an audience helps shape the story.",
@@ -60,7 +60,7 @@ export const projects = [
   },
   {
     slug: "adobe-firefly", client: "Adobe", title: "From new tools to new thinking.",
-    subtitle: "Firefly, Adobe MAX & creative dialogue", category: "Demos & adoption", image: "/media/adobe.webp",
+    subtitle: "Firefly, Adobe MAX & creative dialogue", category: "Demos & adoption", image: "/media/adobe/hero.webp",
     video: "", alt: "Creative collaborators at Adobe headquarters",
     discipline: "Creative advisory / Workshops / Speaking", sourceSlide: 11,
     intro: "Creative practice, product insight, and conversations about the role of technology in culture.",
@@ -72,7 +72,7 @@ export const projects = [
   },
   {
     slug: "nba-microsoft", client: "NBA × Microsoft", title: "Put the potential in play.",
-    subtitle: "Campaigns, workshops & creative activations", category: "Demos & adoption", image: "/media/nba/montreal.webp",
+    subtitle: "Campaigns, workshops & creative activations", category: "Demos & adoption", image: "/media/nba/hero.webp",
     video: "", alt: "Basketball, Montréal streets, and colour in the Maison NBA event film",
     discipline: "Creative technology / 3D animation / Workshops", sourceSlide: 27,
     intro: "Making creative technology tangible through basketball, product demonstrations, and hands-on learning.",
@@ -80,7 +80,7 @@ export const projects = [
     contribution: "Creative direction, generative imagery, and 3D animation give technology a visible use case, supported by workshops that help teams understand how to work with it.",
     delivered: ["Creative technology development", "3D campaign content", "Workshops and product demonstrations"],
     takeaway: "Technology explained through something people care about.",
-    gallery: ["/media/microsoft-detail.webp"],
+    gallery: ["/media/nba/microsoft-workshop.webp"],
   },
 ];
 // Service packaging reflects the enterprise positioning brief supplied by Will on 9 November 2026.

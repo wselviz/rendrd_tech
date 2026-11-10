@@ -6,6 +6,7 @@ import { Header,Footer,Arrow } from "../../components";
 import { BrandMark } from "../../client-logos";
 import { NBAFeaturedFilm, NBAFilmCollection } from "../../nba-film";
 import NikeCase from "../../nike-case";
+import { RaptorsCase, ArtechouseCase, NeurogenesisCase, AdobeCase } from "../../project-cases";
 export function generateStaticParams(){return projects.map(project=>({slug:project.slug}));}
 export const dynamicParams=false;
 const brandMarks:Record<string,[string,string,boolean][]> = {"nike-air-max":[["nike.svg","Nike",false]],"protopica-artechouse":[["protopica-lockup.png","Protopica",true],["artechouse-wordmark.svg","ARTECHOUSE",true]],"raptors-vince-carter":[["raptors-primary.svg","Toronto Raptors",false],["bell-wordmark.svg","Bell",false]],"neurogenesis":[["protopica-lockup.png","Protopica",true]],"adobe-firefly":[["adobe.svg","Adobe",false]],"nba-microsoft":[["nba.svg","NBA",false],["microsoft.png","Microsoft",false],["best-buy.png","Best Buy",false],["usa-basketball.png","USA Basketball",false],["olympics.svg","Olympics",false]]};
@@ -38,13 +39,17 @@ export default async function WorkPage({params}:{params:Promise<{slug:string}>})
   const {slug}=await params;const index=projects.findIndex(p=>p.slug===slug);if(index<0)notFound();
   const p=projects[index],next=projects[(index+1)%projects.length];
   if (p.slug === "nike-air-max") return <NikeCase />;
+  if (p.slug === "raptors-vince-carter") return <RaptorsCase />;
+  if (p.slug === "protopica-artechouse") return <ArtechouseCase />;
+  if (p.slug === "neurogenesis") return <NeurogenesisCase />;
+  if (p.slug === "adobe-firefly") return <AdobeCase />;
   return <><Header /><main id="main" tabIndex={-1} className={`case-page${p.slug === "nba-microsoft" ? " nba-case" : ""}`}>
-    <div className="case-head section"><Link href="/#work" className="text-link">← Selected work</Link><p className="section-label">{p.client} / {p.subtitle}</p><h1 className="case-title">{p.title}</h1><div className="case-summary"><p>{p.intro}</p><span>{p.discipline}</span></div></div>
+    <div className="case-head section"><Link href="/#work" className="text-link"><Arrow direction="left" /> Selected work</Link><p className="section-label">{p.client} / {p.subtitle}</p><h1 className="case-title">{p.title}</h1><div className="case-summary"><p>{p.intro}</p><span>{p.discipline}</span></div></div>
     <div className="case-hero"><div className="case-brand"><span>Collaborators</span><div>{brandMarks[p.slug].map(([file,name,dark])=><span className={dark?"brand-on-dark":""} key={name}>{["nike.svg","adobe.svg","nba.svg","microsoft.png","best-buy.png","usa-basketball.png","olympics.svg"].includes(file) ? <BrandMark id={file.split(".")[0]} name={name} /> : <img src={"/logos/"+file} alt={name} width="160" height="70"/>}</span>)}</div></div>{p.slug === "nba-microsoft" ? <NBAFeaturedFilm /> : <picture><source media="(max-width:760px)" srcSet={p.image.replace('.webp','-mobile.webp')}/><img src={p.image} alt={p.alt} width="1600" height="1000" fetchPriority="high" /></picture>}</div>
     <section className="case-story section"><h2>The context</h2><p>{p.context}</p><h2>The contribution</h2><p>{p.contribution}</p><h2>What took shape</h2><div><ul>{p.delivered.map(d=><li key={d}>{d}</li>)}</ul><p>{p.takeaway}</p></div></section>
     {p.slug === "nba-microsoft" && <NBAFilmCollection />}
     {p.video&&<section className="case-film section"><h2>The work in motion</h2><video controls playsInline preload="none" poster={p.image} aria-label={p.client+" project film"}><source src={p.video} type="video/mp4" />Your browser cannot play this video.</video></section>}
-    <div className="case-gallery section">{p.gallery.map((src,i)=><figure key={src}><img src={src} alt={galleryCaptions[p.slug][i]} width="1200" height="900" loading="lazy" /><figcaption>{galleryCaptions[p.slug][i]}</figcaption></figure>)}</div>
+    <section className="nba-workshops section"><div><h2>From a product feature<br />to practical use.</h2><p>Workshops and product demonstrations give teams a way to experience the tools for themselves. The campaign work becomes a concrete example: what the technology can make, how it fits into a workflow, and how to explain its value to a client.</p></div>{p.gallery.map((src,i)=><figure key={src}><img src={src} alt={galleryCaptions[p.slug][i]} width="1200" height="1600" loading="lazy" /><figcaption>{galleryCaptions[p.slug][i]}</figcaption></figure>)}</section>
     <section className="case-next section"><p>Next project</p><Link href={"/work/"+next.slug}><h2>{next.client}</h2><Arrow /></Link></section>
   </main><Footer /></>;
 }

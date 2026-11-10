@@ -19,7 +19,7 @@ const archive = [
 export default function NikeCase() {
   return <><Header /><main id="main" tabIndex={-1} className="case-page nike-case">
     <section className="nike-head section">
-      <Link href="/#work" className="text-link">← Selected work</Link>
+      <Link href="/#work" className="text-link"><Arrow direction="left" /> Selected work</Link>
       <div className="nike-heading-brand"><BrandMark id="nike" name="Nike" /><p>Campaigns, creative technology &amp; brand experiences</p></div>
       <h1 className="case-title">From the feed.<br />To the street.</h1>
       <div className="nike-lead"><p>Product stories that move through culture. RENDRD brings Nike campaigns to life through 3D films, digital billboards, retail experiences, and interactive technology.</p><a className="text-link" href="#nike-billboard">See the work in place <Arrow /></a></div>

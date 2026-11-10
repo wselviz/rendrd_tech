@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Link from "../link";
+import { Arrow } from "../icons";
 import "./directions.css";
 
 const directions = [
@@ -100,12 +101,12 @@ export default function DirectionsPage() {
     update(); query.addEventListener("change", update); return () => query.removeEventListener("change", update);
   }, []);
   return <main id="main" className="directions-page">
-    <header className="directions-header"><Link href="/" className="wordmark">RENDRD <span>MEDIA</span></Link><Link href="/" className="text-link">Back to the website ↗</Link></header>
+    <header className="directions-header"><Link href="/" className="wordmark">RENDRD <span>MEDIA</span></Link><Link href="/" className="text-link">Back to the website <Arrow/></Link></header>
     <div className="directions-intro"><p>Hero direction review</p><h1>Three ways to make<br/>the first impression.</h1><p>Choose the motion language. The business message stays clear in every direction.</p></div>
     <div className="directions-tabs" role="tablist" aria-label="Motion concepts">{directions.map((direction, i) => <button role="tab" id={`direction-tab-${i}`} tabIndex={choice === i ? 0 : -1} aria-controls="direction-panel" aria-selected={choice === i} key={direction.name} onKeyDown={event => { const next = event.key === "ArrowRight" ? (i + 1) % 3 : event.key === "ArrowLeft" ? (i + 2) % 3 : event.key === "Home" ? 0 : event.key === "End" ? 2 : -1; if (next < 0) return; event.preventDefault(); setChoice(next); setManual(0); setAutomatic(playing); document.getElementById(`direction-tab-${next}`)?.focus(); }} onClick={() => { setChoice(i); setManual(0); setAutomatic(playing); }}><span>0{i + 1}</span>{direction.name}</button>)}</div>
     <section id="direction-panel" role="tabpanel" aria-labelledby={`direction-tab-${choice}`}>
-      <div className="direction-preview"><div className="direction-message"><p>Strategy &amp; creative technology</p><h2>Technology your team<br/><em>can put to work.</em></h2><p>RENDRD helps marketing and sales teams choose the right technology, build useful tools, and create campaigns that connect with customers.</p><span className="direction-message-cta">Discuss your priorities ↗</span></div><MotionStudy key={choice} choice={choice} manual={manual} playing={playing} automatic={automatic} /></div>
-      <div className="direction-controls"><button className="pill" aria-pressed={!playing} onClick={() => setPlaying(p => !p)}>{playing ? "Pause preview" : "Play preview"}</button><button className="text-link" aria-pressed={automatic} onClick={() => { setAutomatic(a => !a); setPlaying(true); }}>{automatic ? "Auto sequence on" : "Replay auto sequence"}</button><label htmlFor="motion-progress">Scroll preview<input id="motion-progress" type="range" min="0" max="100" value={Math.round(manual * 100)} onChange={e => { setAutomatic(false); setManual(Number(e.target.value) / 100); }} /></label><button className="text-link" onClick={() => { setAutomatic(false); setManual(1); }}>Show resolved state ↗</button></div>
+      <div className="direction-preview"><div className="direction-message"><p>Strategy &amp; creative technology</p><h2>Technology your team<br/><em>can put to work.</em></h2><p>RENDRD helps marketing and sales teams choose the right technology, build useful tools, and create campaigns that connect with customers.</p><span className="direction-message-cta">Discuss your priorities <Arrow/></span></div><MotionStudy key={choice} choice={choice} manual={manual} playing={playing} automatic={automatic} /></div>
+      <div className="direction-controls"><button className="pill" aria-pressed={!playing} onClick={() => setPlaying(p => !p)}>{playing ? "Pause preview" : "Play preview"}</button><button className="text-link" aria-pressed={automatic} onClick={() => { setAutomatic(a => !a); setPlaying(true); }}>{automatic ? "Auto sequence on" : "Replay auto sequence"}</button><label htmlFor="motion-progress">Scroll preview<input id="motion-progress" type="range" min="0" max="100" value={Math.round(manual * 100)} onChange={e => { setAutomatic(false); setManual(Number(e.target.value) / 100); }} /></label><button className="text-link" onClick={() => { setAutomatic(false); setManual(1); }}>Show resolved state <Arrow/></button></div>
       <div className="direction-description"><h2>{directions[choice].line}</h2><div><p>{directions[choice].description}</p><p>{directions[choice].value}</p></div></div>
     </section>
     <p className="directions-note">These are working motion studies. Choose 1, 2, or 3 in the chat and I’ll develop that direction for the landing page.</p>
