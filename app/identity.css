@@ -1,0 +1,58 @@
+/* Spatial lettering follows the cover of the supplied RENDRD PDF. */
+.strategy-hero{--hero-height:clamp(760px,calc(100svh - 68px),1100px);height:calc(var(--hero-height) + 380px);position:relative}
+.strategy-frame{position:sticky;top:0;height:var(--hero-height);overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 20% 30%,var(--paper-highlight) 0%,var(--ground) 65%,var(--hero-shadow) 100%)}
+.strategy-eyebrow{position:absolute;inset:25px var(--gutter) auto;display:flex;justify-content:space-between;gap:25px;font-size:12px;line-height:1.3;text-transform:uppercase;z-index:4}
+.strategy-eyebrow>span:first-child::before{content:"";display:inline-block;vertical-align:middle;width:4px;height:4px;background:var(--accent);border-radius:50%;margin:0 10px 2px 0}
+.strategy-eyebrow>span:last-child{font-size:11px}
+.identity-stage{position:absolute;inset:80px var(--gutter) 65px;perspective:1100px;perspective-origin:50% 50%;pointer-events:none}
+.identity-stage h1{position:absolute;inset:0;margin:0;font:600 clamp(90px,8.55vw,174px)/1 Archivo,Arial,sans-serif;letter-spacing:-.065em;transform-style:preserve-3d}
+.identity-letter{position:absolute;display:block;left:0;top:0;will-change:transform;transform-origin:50% 50%;backface-visibility:hidden}
+/* A composed fallback is shown before fonts and the motion controller are ready. */
+.identity-letter-0{left:1%;top:0}.identity-letter-1{left:15%;top:20%}.identity-letter-2{left:2%;top:40%}.identity-letter-3{left:2%;top:62%}.identity-letter-4{left:16%;top:62%}.identity-letter-5{left:18%;top:82%}.identity-letter-6{left:35%;top:7%}.identity-letter-7{left:51%;top:0}.identity-letter-8{left:64%;top:7%}.identity-letter-9{left:79%;top:0}.identity-letter-10{left:89%;top:7%}
+.identity-letter[style]{left:0;top:0}
+.identity-bonds{position:absolute;inset:0;width:100%;height:100%;overflow:visible;z-index:-1}
+.identity-bond path{fill:none;stroke:var(--accent);stroke-width:1;stroke-dasharray:1 5;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.identity-bond circle{fill:var(--accent)}
+.identity-side-note,.identity-fields{position:absolute;font-size:11px;line-height:1.3;text-transform:uppercase;margin:0}
+.identity-side-note{top:27%;left:0}.identity-fields{top:44%;left:17.5%}
+.strategy-copy{position:absolute;left:37%;right:var(--gutter);top:38%;max-width:860px;z-index:3}
+.strategy-copy .folio{font-size:11px;margin:0 0 24px}
+.strategy-copy h2{font:600 clamp(42px,4.4vw,76px)/1.04 Archivo,Arial,sans-serif;letter-spacing:-.055em;margin:0 0 23px}
+.strategy-copy h2 span{color:var(--accent)}
+.strategy-copy>p:not(.folio){font-size:clamp(19px,1.6vw,24px);line-height:1.4;max-width:600px;margin:0 0 28px}
+.strategy-actions{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
+.strategy-actions>.pill{background:var(--ink);color:var(--on-ink);font-size:15px;min-height:48px}
+.strategy-actions>.pill:hover{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.strategy-work-link{display:inline-flex;align-items:center;gap:25px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
+.strategy-credential{display:inline-flex;align-items:center;gap:38px;font-size:13px;line-height:1.4;border-top:1px solid var(--line);padding-top:18px;margin-top:34px;max-width:450px}
+.strategy-credential:hover{color:var(--accent)}
+.identity-instruction{position:absolute;bottom:24px;left:var(--gutter);right:var(--gutter);display:flex;align-items:center;justify-content:space-between;gap:18px;font-size:11px;color:var(--muted)}
+.identity-instruction>span{display:flex;align-items:center;gap:10px}
+.scroll-tick{display:inline-block;position:relative;width:1px;height:22px;background:var(--line)}
+.scroll-tick::after{content:"";position:absolute;bottom:0;left:-1px;width:3px;height:3px;border-radius:50%;background:var(--accent)}
+.identity-toggle{font:inherit;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--line);min-height:36px;padding:6px 0;cursor:pointer}
+.identity-toggle:hover{border-color:var(--ink)}
+@media(min-width:1700px){.strategy-copy{top:40%}.strategy-copy>p:not(.folio){max-width:690px}.strategy-credential{font-size:15px;margin-top:42px}}
+@media(min-width:761px) and (max-width:1100px){.strategy-hero{--hero-height:800px}.identity-stage{inset-inline:30px}.identity-stage h1{font-size:8.8vw}.strategy-copy{left:36%;top:33%;right:30px}.strategy-copy h2{font-size:clamp(37px,4.9vw,52px)}.strategy-copy>p:not(.folio){font-size:19px}.strategy-copy .folio{max-width:300px;font-size:10px}.strategy-actions{gap:20px}.strategy-actions>.pill{font-size:14px}.strategy-credential{margin-top:26px}.identity-fields{font-size:10px;left:17%}}
+@media(max-width:760px){
+ .strategy-hero{height:auto;--hero-height:auto}
+ .strategy-frame{position:relative;height:auto;overflow:hidden;padding:25px var(--gutter) 24px}
+ .strategy-eyebrow{position:relative;inset:auto;font-size:12px;margin-bottom:25px}
+ .strategy-eyebrow>span:last-child{display:none}
+ .identity-stage{position:relative;inset:auto;width:100%;height:clamp(350px,112vw,520px)}
+ .identity-stage h1{font-size:clamp(58px,18.5vw,104px)}
+ .identity-letter:nth-of-type(n+8){font-size:.7em}
+ .identity-side-note{left:0;top:27%;font-size:9px;max-width:70px}
+ .identity-fields{left:35%;top:46%;font-size:9px}
+ .strategy-copy{position:relative;inset:auto;margin:42px 0 35px;max-width:600px}
+ .strategy-copy .folio{font-size:10px;margin-bottom:15px}
+ .strategy-copy h2{font-size:clamp(35px,10vw,56px);margin-bottom:20px;letter-spacing:-.05em}
+ .strategy-copy>p:not(.folio){font-size:18px;line-height:1.4;margin-bottom:23px}
+ .strategy-actions{gap:21px}.strategy-actions>.pill{min-height:45px;padding:10px 14px;font-size:14px;gap:16px}
+ .strategy-work-link{font-size:13px;gap:13px}
+ .strategy-credential{font-size:12px;margin-top:27px;padding-top:17px;gap:25px}
+ .identity-instruction{position:absolute;top:calc(65px + clamp(350px,112vw,520px)*.79);left:61%;right:var(--gutter);bottom:auto;display:block;font-size:10px;padding:0;border:0}
+ .identity-instruction>span{display:block;max-width:115px;line-height:1.4}.identity-instruction .scroll-tick{display:none}.identity-toggle{margin-top:7px;min-height:32px}
+}
+@media(min-width:761px) and (max-height:760px){.strategy-hero{height:var(--hero-height)}.strategy-frame{position:relative}}
+@media(prefers-reduced-motion:reduce){.strategy-hero{height:auto}.strategy-frame{position:relative}.identity-letter{will-change:auto}.identity-toggle,.identity-instruction>span{display:none}.identity-instruction::before{content:"RENDRD / MEDIA"}}

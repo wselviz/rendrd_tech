@@ -1,0 +1,50 @@
+{
+  "purpose": "Theme-aware client marks; original artwork retained without redrawing.",
+  "sources": [
+    {
+      "output": "mono/openai.svg",
+      "source": "openai.svg",
+      "adjustment": "Trim unused viewBox space; render alpha in the site ink color."
+    },
+    {
+      "output": "mono/adobe.svg",
+      "source": "adobe.svg",
+      "adjustment": "Trim unused viewBox space; render alpha in the site ink color."
+    },
+    {
+      "output": "mono/nike.svg",
+      "source": "nike.svg",
+      "adjustment": "Trim unused viewBox space; render alpha in the site ink color."
+    },
+    {
+      "output": "mono/meta.svg",
+      "source": "meta.svg",
+      "adjustment": "Trim unused viewBox space; render alpha in the site ink color."
+    },
+    {
+      "output": "mono/nba.svg",
+      "source": "nba.svg",
+      "adjustment": "Keep original red/blue paths as one ink; original white letters become knockouts."
+    },
+    {
+      "output": "microsoft.png",
+      "source": "microsoft.png",
+      "adjustment": "Use original alpha channel as a CSS mask."
+    },
+    {
+      "output": "mono/best-buy.svg",
+      "source": "best-buy.png",
+      "adjustment": "Trim transparent bounds, reuse original alpha."
+    },
+    {
+      "output": "mono/usa-basketball.svg",
+      "source": "usa-basketball.png",
+      "adjustment": "Original supplied shield; white internal areas are knocked out with an SVG filter."
+    },
+    {
+      "output": "olympics.svg",
+      "source": "olympics.svg",
+      "adjustment": "Use original strokes as a CSS alpha mask."
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+/* Follow the device appearance from first paint, including changes while open. */
+:root {
+  color-scheme: light;
+  --ground: #f2f0e9;
+  --ink: #17171a;
+  --muted: #626064;
+  --line: #bdb9b2;
+  --line-strong: #8b8582;
+  --accent: #b83920;
+  --on-ink: #f5f2ec;
+  --on-accent: #fff;
+  --paper-highlight: #faf8f1;
+  --paper-shadow: #e3e0d9;
+  --hero-shadow: #e8e3dc;
+  --surface: #e9e6df;
+  --surface-raised: #e4e0d9;
+  --surface-tint: #eae1da;
+  --surface-hover: #e0d6cf;
+  --media-placeholder: #c7c1ba;
+  --outline: #827c78;
+  --curtain: #ebe6df;
+  --focus: #b83920;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ground: #131316;
+    --ink: #f1eee7;
+    --muted: #bcb6b0;
+    --line: #49474a;
+    --line-strong: #817b77;
+    --accent: #ff805c;
+    --on-ink: #171518;
+    --on-accent: #20130f;
+    --paper-highlight: #242327;
+    --paper-shadow: #0e0e11;
+    --hero-shadow: #171519;
+    --surface: #211f23;
+    --surface-raised: #2c292d;
+    --surface-tint: #312624;
+    --surface-hover: #42302c;
+    --media-placeholder: #2c292c;
+    --outline: #8b817a;
+    --curtain: #1b191d;
+    --focus: #ff9979;
+  }
+  /* Original campaign marks with their own artwork remain on a neutral plate. */
+  .case-brand>div>span:has(>img):not(.brand-on-dark) { background:#e9e6df; padding:8px 12px; }
+}
+
+html { background:var(--ground); }
+body { color:var(--ink); }
+::selection { background:var(--accent); color:var(--on-accent); }
+button:focus-visible,a:focus-visible,select:focus-visible,textarea:focus-visible,video:focus-visible { outline-color:var(--focus); }
+.contact-grid select,.contact-grid textarea { color:var(--ink); caret-color:var(--ink); }
+.contact-grid select option { background:var(--surface); color:var(--ink); }
+
+/* Cropped source artwork supplies the shape; one ink color supplies the paint. */
+.brand-mark {
+  display:block;
+  flex:none;
+  width:min(100%,var(--mark-width));
+  height:var(--mark-height);
+  background:currentColor;
+  color:var(--ink);
+  mask-image:var(--mark-image);
+  mask-repeat:no-repeat;
+  mask-position:center;
+  mask-size:contain;
+}
+.brand-mark-openai { --mark-image:url('/logos/mono/openai.svg'); --mark-width:132px; --mark-height:36px; }
+.brand-mark-adobe { --mark-image:url('/logos/mono/adobe.svg'); --mark-width:118px; --mark-height:30px; }
+.brand-mark-nike { --mark-image:url('/logos/mono/nike.svg'); --mark-width:126px; --mark-height:44px; }
+.brand-mark-microsoft { --mark-image:url('/logos/microsoft.png'); --mark-width:144px; --mark-height:32px; }
+.brand-mark-nba { --mark-image:url('/logos/mono/nba.svg'); --mark-width:30px; --mark-height:66px; }
+.brand-mark-meta { --mark-image:url('/logos/mono/meta.svg'); --mark-width:126px; --mark-height:28px; }
+.brand-mark-best-buy { --mark-image:url('/logos/mono/best-buy.svg'); --mark-width:102px; --mark-height:62px; }
+.brand-mark-usa-basketball { --mark-image:url('/logos/mono/usa-basketball.svg'); --mark-width:66px; --mark-height:78px; }
+.brand-mark-olympics { --mark-image:url('/logos/olympics.svg'); --mark-width:134px; --mark-height:62px; }
+.trust-section .clients { display:grid; grid-template-columns:145px minmax(0,1fr); gap:40px; align-items:center; }
+.client-marks { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); column-gap:28px; align-items:center; }
+.client-marks li { display:flex; align-items:center; justify-content:center; min-width:0; min-height:82px; }
+.case-brand .brand-mark { max-width:140px; }
+@media (min-width:761px) and (max-width:1100px) {
+  .trust-section .clients { grid-template-columns:1fr; gap:18px; }
+  .trust-section .clients>p { margin:0; }
+  .client-marks { column-gap:26px; }
+}
+@media (max-width:760px) {
+  .trust-section .clients { display:block; }
+  .client-marks { grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px 24px; }
+  .client-marks li { min-height:64px; }
+  .brand-mark-openai { --mark-width:106px; --mark-height:29px; }
+  .brand-mark-adobe { --mark-width:98px; --mark-height:25px; }
+  .brand-mark-nike { --mark-width:103px; --mark-height:36px; }
+  .brand-mark-microsoft { --mark-width:114px; --mark-height:25px; }
+  .brand-mark-nba { --mark-width:25px; --mark-height:55px; }
+  .brand-mark-meta { --mark-width:105px; --mark-height:24px; }
+  .brand-mark-best-buy { --mark-width:82px; --mark-height:48px; }
+  .brand-mark-usa-basketball { --mark-width:48px; --mark-height:58px; }
+  .brand-mark-olympics { --mark-width:110px; --mark-height:52px; }
+}
+@media (forced-colors:active) {
+  .brand-mark { mask:none; background:none; width:auto; height:auto; color:CanvasText; }
+  .brand-mark::before { content:attr(data-label); font:600 20px/1.2 Archivo,Arial,sans-serif; }
+}

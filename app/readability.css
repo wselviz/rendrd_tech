@@ -1,0 +1,87 @@
+/* Plain, readable copy; expressive typography stays with the display headings. */
+body{font-family:Arial,Helvetica,sans-serif;font-size:18px;line-height:1.55}
+.section-label,.folio,.credential-role,.project-meta p{font:400 16px/1.45 Arial,Helvetica,sans-serif;text-transform:none;letter-spacing:0}
+.desktop-nav{font-size:16px;gap:28px}
+.header-cta,.pill,.text-link{font-size:16px;min-height:44px}
+.header-cta{padding-inline:18px}
+.wordmark span{font-family:Arial,Helvetica,sans-serif;font-size:11px}
+.strategy-copy{top:36%;max-width:890px}
+.strategy-copy>p.hero-category{font-size:18px;line-height:1.4;margin:0 0 20px;max-width:none}
+.strategy-copy h2{font-size:clamp(40px,4.2vw,76px);line-height:1.08;margin-bottom:24px}
+.strategy-copy>p:not(.hero-category){font-size:21px;line-height:1.5;max-width:670px;margin-bottom:30px}
+.strategy-actions>.pill,.strategy-work-link{font-size:16px;min-height:48px}
+.identity-toggle{position:absolute;right:var(--gutter);bottom:22px;display:grid;place-items:center;width:44px;height:44px;min-height:44px;padding:0;border:1px solid var(--line);background:transparent;margin:0}
+.identity-toggle:hover{background:var(--surface-tint)}
+.trust-section{padding-top:20px;padding-bottom:40px}
+.trust-section .clients>p{font-size:16px;line-height:1.4;text-transform:none}
+.trust-section .clients{grid-template-columns:175px minmax(0,1fr);gap:30px;padding-block:20px 35px}
+.capability-intro h2{margin:0 0 28px}
+.capability-intro>p:not(.section-label){font-size:20px;line-height:1.5;max-width:420px}
+.capabilities{padding-top:55px;padding-bottom:75px}
+.capability-proof>span{font-size:16px;line-height:1.4}
+.service h3 button{font-family:Arial,Helvetica,sans-serif;font-size:25px;line-height:1.3;letter-spacing:-.035em}
+.service-content>p{font-size:18px;line-height:1.55}
+.service-content li{font-size:16px;line-height:1.5}
+.service-content ul{margin-block:22px;gap:10px 16px}
+.service-content li+li::before{display:none}
+.service-content li{border-left:2px solid var(--line);padding-left:12px}
+.filters button{font-size:16px;min-height:44px;padding:9px 15px}
+.project-category{font-size:15px;padding:8px 14px}
+.project-meta p,.project-meta>span{font-size:16px;line-height:1.4}
+.project-summary{font-size:18px;line-height:1.5}
+.work .section-heading>p{font-size:20px;line-height:1.5;max-width:360px}
+.work-end{justify-content:flex-end}
+.about{display:block}
+.about-main{display:grid;grid-template-columns:1fr 1fr;gap:10%;align-items:center}
+.about-photo,.about-photo>img{height:500px;min-height:0}
+.about-copy h2{margin:0 0 28px}
+.about-copy>p:not(.section-label){font-size:20px;line-height:1.55}
+.about .credentials-grid{margin-top:65px}
+.credential-role{font-size:16px;line-height:1.4;margin:8px 0 18px}
+.credentials-grid h3{font-size:27px}
+.credentials-grid article>p:last-child{font-size:18px;line-height:1.5;max-width:none}
+.engagement-grid article{padding-top:25px}
+.engagement-grid h3{margin:0 0 22px;font-size:26px}
+.engagement-grid p{font-size:18px;line-height:1.55}
+.engagements{padding-bottom:85px}
+.footer{padding-top:70px}
+.footer h2{font-size:clamp(46px,7.2vw,112px);line-height:1.08;letter-spacing:-.06em}
+.contact-grid>div>p{font-size:18px;line-height:1.5}
+.contact-grid label{font-size:16px;line-height:1.4}
+.contact-grid select,.contact-grid textarea{font-family:Arial,Helvetica,sans-serif;font-size:18px;line-height:1.5}
+.form-bottom>span,.footer-bottom,.footer-bottom>span:last-of-type{font-size:14px;line-height:1.5}
+.case-head>.section-label,.case-summary span,.case-brand>span{font-size:16px;line-height:1.4}
+.case-summary p,.case-story p,.case-story li{font-size:20px;line-height:1.55}
+.case-brand p,.case-gallery figcaption{font-size:18px;line-height:1.5}
+.nba-film figcaption p,.nba-film-toggle{font-size:16px;line-height:1.4}
+.nba-collection-heading>.section-label{font-size:16px;line-height:1.4}
+.nba-collection-heading>div>p{font-size:20px;line-height:1.5}
+.is-awaiting-focus{filter:blur(var(--focus-blur,0px));transform:translateY(var(--focus-offset,0px))}
+.is-awaiting-focus:focus-within{filter:none;transform:none}
+@media(min-width:761px) and (max-width:1100px){
+ .strategy-copy{top:34%}.strategy-copy h2{font-size:39px}.strategy-copy>p:not(.hero-category){font-size:19px}.strategy-copy>p.hero-category{font-size:17px}
+ .trust-section .clients{grid-template-columns:1fr;gap:20px}
+ .credentials-grid{grid-template-columns:1fr 1fr;gap:30px}
+}
+@media(max-width:760px){
+ .header{height:74px}.menu-button{font-size:16px;min-height:44px;padding:8px 14px}.mobile-menu nav a{font-size:28px}
+ .strategy-frame{display:flex;flex-direction:column;padding-top:18px;padding-bottom:28px}
+ .strategy-copy{order:0;position:relative;top:auto;left:auto;right:auto;margin:16px 0 35px}
+ .strategy-copy>p.hero-category{font-size:16px;margin-bottom:18px}
+ .strategy-copy h2{font-size:clamp(32px,8.8vw,52px);line-height:1.08;margin-bottom:22px}
+ .strategy-copy>p:not(.hero-category){font-size:18px;line-height:1.5;margin-bottom:24px}
+ .strategy-actions{gap:14px 20px}.strategy-actions>.pill,.strategy-work-link{font-size:16px;min-height:48px}
+ .identity-stage{order:1;height:clamp(310px,92vw,430px);margin-bottom:8px}
+ .identity-toggle{bottom:30px;right:var(--gutter);top:auto}
+ .trust-section{padding-block:20px 30px}.trust-section .clients{display:block;padding-block:15px 25px}.trust-section .clients>p{font-size:16px;max-width:none;margin-bottom:22px}
+ .capabilities{padding-block:35px 55px}.capability-intro h2{font-size:40px;margin:0 0 22px}.capability-intro>p:not(.section-label){font-size:18px}
+ .service h3 button{font-size:23px;padding-block:21px}.service-content>p{font-size:18px}.service-content li{font-size:16px}.service-mobile-proof>span,.service-mobile-proof small{font-size:16px;line-height:1.4}
+ .filters{gap:3px}.filters button{font-size:15px;padding-inline:10px}.project-category{font-size:14px}.project-meta p,.project-meta>span{font-size:15px}.project-summary{font-size:18px}
+ .work .section-heading h2{font-size:42px}.work .section-heading>p{font-size:18px;margin-top:18px}
+ .about-main{display:flex;flex-direction:column;gap:30px}.about-photo{width:100%}.about-photo,.about-photo>img{height:410px}.about-copy h2{font-size:42px;margin:0 0 24px}.about-copy>p:not(.section-label){font-size:18px;line-height:1.5}
+ .about .credentials-grid{grid-template-columns:1fr;margin-top:42px;gap:26px}.credential-role{font-size:16px;margin-bottom:12px}.credentials-grid h3{font-size:26px;margin-bottom:12px}.credentials-grid article>p:last-child{font-size:18px}
+ .engagements .section-heading h2{font-size:39px}.engagements .section-heading>.text-link{margin-top:22px}.engagement-grid article{padding:23px 0 0}.engagement-grid h3{font-size:25px}.engagement-grid p{font-size:18px}.engagements{padding-bottom:55px}
+ .footer{padding-top:45px}.footer h2{font-size:clamp(35px,8.7vw,62px);line-height:1.12}.contact-grid>div>p{font-size:18px}.contact-grid label{font-size:16px}.form-bottom .pill{font-size:16px}.footer-bottom a:last-child{font-size:14px}
+ .case-head>.section-label,.case-summary span,.case-brand>span{font-size:16px}.case-title{font-size:46px}.case-summary p,.case-story p,.case-story li{font-size:18px;line-height:1.55}.case-gallery figcaption{font-size:16px}.nba-film figcaption p,.nba-film-toggle{font-size:15px}.nba-collection-heading>.section-label{font-size:16px}.nba-collection-heading>div>p{font-size:18px}
+}
+@media(prefers-reduced-motion:reduce){.identity-toggle{display:none}.identity-letter{filter:none!important}.is-awaiting-focus{filter:none;transform:none}}
