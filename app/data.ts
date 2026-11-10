@@ -104,4 +104,3 @@ export const engagements = [
  {title:"Use case to market",text:"A working prototype, campaign, or product demo, with the materials your team needs to bring it to market.",detail:"Prototype · Produce · Enable"},
  {title:"Embedded advisory",text:"Ongoing support for your team’s technology decisions, experiments, and adoption as new capabilities emerge.",detail:"Advise · Evaluate · Build capability"},
 ];
-

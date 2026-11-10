@@ -6,6 +6,8 @@ import { Header,Footer,Arrow } from "../../components";
 import { BrandMark } from "../../client-logos";
 import { NBAFeaturedFilm, NBAFilmCollection } from "../../nba-film";
 import NikeCase from "../../nike-case";
+export function generateStaticParams(){return projects.map(project=>({slug:project.slug}));}
+export const dynamicParams=false;
 const brandMarks:Record<string,[string,string,boolean][]> = {"nike-air-max":[["nike.svg","Nike",false]],"protopica-artechouse":[["protopica-lockup.png","Protopica",true],["artechouse-wordmark.svg","ARTECHOUSE",true]],"raptors-vince-carter":[["raptors-primary.svg","Toronto Raptors",false],["bell-wordmark.svg","Bell",false]],"neurogenesis":[["protopica-lockup.png","Protopica",true]],"adobe-firefly":[["adobe.svg","Adobe",false]],"nba-microsoft":[["nba.svg","NBA",false],["microsoft.png","Microsoft",false],["best-buy.png","Best Buy",false],["usa-basketball.png","USA Basketball",false],["olympics.svg","Olympics",false]]};
 const galleryCaptions:Record<string,string[]> = {
   "nike-air-max": [
@@ -46,4 +48,3 @@ export default async function WorkPage({params}:{params:Promise<{slug:string}>})
     <section className="case-next section"><p>Next project</p><Link href={"/work/"+next.slug}><h2>{next.client}</h2><Arrow /></Link></section>
   </main><Footer /></>;
 }
-

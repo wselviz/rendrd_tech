@@ -7,10 +7,17 @@
 .strategy-actions>.pill{background:var(--accent);border-color:var(--accent);color:var(--on-accent);clip-path:polygon(0 0,calc(100% - 9px) 0,100% 9px,100% 100%,9px 100%,0 calc(100% - 9px))}
 .strategy-actions>.pill:hover{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
 .header-cta{border-color:var(--line-strong)}
-.identity-toggle{border-color:var(--line-strong);clip-path:polygon(0 0,calc(100% - 6px) 0,100% 6px,100% 100%,0 100%)}
+.identity-toggle{border-color:var(--line-strong)}
+.strategy-actions>.pill:focus-visible{outline:none;box-shadow:inset 0 0 0 3px var(--on-accent)}
 .identity-bond path{stroke-dasharray:1 7;stroke-width:1.1}
 .project-card:focus-within .project-image,.project-card:hover .project-image{outline:1px solid var(--accent);outline-offset:5px}
 .section-label::before{background:var(--accent)}
+.service{position:relative}
+.service::before{content:"";position:absolute;top:-1px;left:0;width:30px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.service.is-open::before,.service:focus-within::before{transform:scaleX(1)}
+.project-card .project-meta{position:relative}
+.project-card .project-meta::before{content:"";position:absolute;left:0;top:-9px;width:40px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.project-card:hover .project-meta::before,.project-card:focus-within .project-meta::before{transform:scaleX(1)}
 body::before{opacity:.022}
 @media(max-width:760px){.signal-field{top:50%}.strategy-frame::after{bottom:30px}}
 @media(prefers-reduced-motion:reduce){.signal-field canvas{display:none}}

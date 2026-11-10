@@ -13,6 +13,7 @@ export type NBAFilm = {
 };
 
 export function NBAFilmPlayer({ film, featured = false }: { film: NBAFilm; featured?: boolean }) {
+  const Heading = featured ? "h2" : "h3";
   const video = useRef<HTMLVideoElement>(null);
   const resumeAt = useRef(0);
   const [playing, setPlaying] = useState(false);
@@ -87,7 +88,7 @@ export function NBAFilmPlayer({ film, featured = false }: { film: NBAFilm; featu
       {!started && !failed && <button type="button" className="nba-film-play" onClick={toggle} aria-label={`Play ${film.title}`}><span aria-hidden="true">▶</span></button>}
     </div>
     <figcaption>
-      <div><h3>{film.title}</h3><p>{film.detail} <span aria-hidden="true">/</span> {film.duration}</p></div>
+      <div><Heading>{film.title}</Heading><p>{film.detail} <span aria-hidden="true">/</span> {film.duration}</p></div>
       {failed ? <a className="nba-film-toggle" href={src}>Open film ↗</a> : <button type="button" className="nba-film-toggle" onClick={toggle} aria-label={`${playing ? "Pause" : "Play"} film: ${film.title}`}>{playing ? "Pause" : "Play"} <span aria-hidden="true">{playing ? "Ⅱ" : "↗"}</span></button>}
     </figcaption>
   </figure>;

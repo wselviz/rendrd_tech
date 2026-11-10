@@ -82,7 +82,7 @@ export default function StrategyHero(){
     const ry=(tilt[i][1]*1.5+Math.cos(phase*.65)*5)*float-sway*direction*.9;
     const rz=(tilt[i][2]*1.4+Math.sin(phase*.6)*1.5)*float+sway*direction*.8;
     nodes[i].style.transform="translate3d("+(x-size.w/2).toFixed(2)+"px,"+(y-size.h/2).toFixed(2)+"px,"+z.toFixed(2)+"px) rotateX("+rx.toFixed(2)+"deg) rotateY("+ry.toFixed(2)+"deg) rotateZ("+rz.toFixed(2)+"deg) scaleX(1.2)";
-    nodes[i].style.filter="blur("+(Math.abs(z)/65*Math.max(0,1-ease)).toFixed(2)+"px)";
+    nodes[i].style.filter="blur("+(Math.abs(z)/130*Math.max(0,1-ease)).toFixed(2)+"px)";
     const scale=perspective/(perspective-z);
     projected.push({x:width/2+(x-width/2)*scale,y:height/2+(y-height/2)*scale,w:size.w*1.2*scale,h:size.h*.78*scale});
    });
@@ -103,7 +103,7 @@ export default function StrategyHero(){
    if(!reduced)shader?.render(elapsed,progress,currentPointer,theme.matches);
    if(visible&&idle)raf=requestAnimationFrame(draw);
   };
-  const schedule=()=>{if(!raf&&!dead)raf=requestAnimationFrame(draw);};
+  const schedule=()=>{if(!raf&&!dead&&visible&&!document.hidden)raf=requestAnimationFrame(draw);};
   wake.current=()=>{last=0;schedule();};
   const measure=()=>{
    if(dead)return;
@@ -147,4 +147,3 @@ export default function StrategyHero(){
   </div>
  </section>;
 }
-

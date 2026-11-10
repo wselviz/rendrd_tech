@@ -6,7 +6,7 @@ Audience: enterprise marketing and sales teams seeking technology strategy, prac
 
 Visual concept: a field of possibilities coming into focus. Preserve the supplied PDF spatial identity: RENDRD follows a loose vertical zigzag; MEDIA occupies the upper field. The message remains immediately readable. Scroll aligns the floating letters without collapsing them into a conventional wordmark.
 
-Color: warm white (#f2f0e9), graphite (#17171a), restrained vermilion (#b83920). Device dark mode uses charcoal (#131316), warm white ink (#f1eee7), and electric coral (#ff805c). Logos use original shapes in currentColor; media keeps its own colors.
+Color: warm white (#f2f0e9), graphite (#17171a), restrained vermilion (#b1321c). Device dark mode uses charcoal (#131316), warm white ink (#f1eee7), and electric coral (#ff805c). Logos use original shapes in currentColor; media keeps its own colors.
 
 Signal treatment: subtle procedural WebGL contours and sparse dots, pluses, and slashes around letters and edges. The sales copy has a clear zone. Small clipped corners and registration marks suggest precision without fake dashboard labels. Inspiration is the instrument-like geometry of Marathon interfaces, not game assets or branding. The shader uses the existing hero clock, capped resolution and 30fps updates, and stops when paused, hidden or offscreen. Reduced motion, data saving and failed WebGL use static texture.
 

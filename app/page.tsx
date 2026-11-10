@@ -43,4 +43,3 @@ export default function Home(){
   </section>
  </main><Footer initialService={services[active].title}/></>;
 }
-

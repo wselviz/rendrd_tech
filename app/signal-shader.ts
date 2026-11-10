@@ -1,6 +1,6 @@
 /** A quiet, procedural signal field. The hero owns the clock and motion controls. */
 export function createSignalShader(canvas: HTMLCanvasElement) {
-  const gl = canvas.getContext("webgl", { alpha: true, antialias: false, depth: false, powerPreference: "low-power" });
+  const gl = canvas.getContext("webgl", { alpha: true, premultipliedAlpha: false, antialias: false, depth: false, powerPreference: "low-power" });
   if (!gl) return null;
   const shaders: WebGLShader[] = [];
   const compile = (type: number, source: string) => {
@@ -39,7 +39,7 @@ export function createSignalShader(canvas: HTMLCanvasElement) {
       // Leave the sales message optically clean; detail lives in the letter field.
       float safe=1.-smoothstep(.30,.43,uv.x)*(1.-smoothstep(.57,.77,uv.y));
       float edge=smoothstep(.01,.1,uv.x)*(1.-smoothstep(.96,1.,uv.x));
-      float strength=(contour*.075+marks*.24)*safe*edge*(1.-u_progress*.4);
+      float strength=(contour*.035+marks*.16)*safe*edge*(1.-u_progress*.4);
       vec3 ink=mix(vec3(.52,.19,.12),vec3(1.,.42,.25),u_dark);
       gl_FragColor=vec4(ink,strength);
     }

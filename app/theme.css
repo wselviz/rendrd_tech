@@ -6,7 +6,7 @@
   --muted: #626064;
   --line: #bdb9b2;
   --line-strong: #8b8582;
-  --accent: #b83920;
+  --accent: #b1321c;
   --on-ink: #f5f2ec;
   --on-accent: #fff;
   --paper-highlight: #faf8f1;
@@ -19,7 +19,7 @@
   --media-placeholder: #c7c1ba;
   --outline: #827c78;
   --curtain: #ebe6df;
-  --focus: #b83920;
+  --focus: #b1321c;
 }
 
 @media (prefers-color-scheme: dark) {

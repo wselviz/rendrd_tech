@@ -20,4 +20,3 @@ export const metadata: Metadata = {
 export default function RootLayout({children}:{children:React.ReactNode}) {
   return <html lang="en"><head><meta name="color-scheme" content="light dark" /><meta name="theme-color" media="(prefers-color-scheme: light)" content="#f2f0e9" /><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#131316" /><link rel="preload" href="/fonts/archivo-600-normal.woff2" as="font" type="font/woff2" crossOrigin="anonymous" /></head><body><a href="#main" className="skip-link">Skip to content</a><Motion />{children}<script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({"@context":"https://schema.org","@type":"Organization",name:"RENDRD Media",url:site.url,email:site.email,description:site.description,founder:{"@type":"Person",name:"Will Selviz"}})}} /></body></html>;
 }
-
