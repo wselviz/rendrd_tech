@@ -1,7 +1,14 @@
 /** A quiet, procedural signal field. The hero owns the clock and motion controls. */
 export function createSignalShader(canvas: HTMLCanvasElement) {
-  const gl = canvas.getContext("webgl", { alpha: true, premultipliedAlpha: false, antialias: false, depth: false, powerPreference: "low-power" });
+  const gl = canvas.getContext("webgl", { alpha: true, premultipliedAlpha: true, antialias: false, depth: false, powerPreference: "low-power" });
   if (!gl) return null;
+  // Some graphics configurations return an opaque buffer despite the request.
+  // Never show that buffer: it would paint the entire field in the accent color.
+  const attributes = gl.getContextAttributes();
+  if (!attributes?.alpha || !attributes.premultipliedAlpha) {
+    canvas.dataset.shader = "fallback";
+    return null;
+  }
   const shaders: WebGLShader[] = [];
   const compile = (type: number, source: string) => {
     const shader = gl.createShader(type)!;
@@ -41,7 +48,8 @@ export function createSignalShader(canvas: HTMLCanvasElement) {
       float edge=smoothstep(.01,.1,uv.x)*(1.-smoothstep(.96,1.,uv.x));
       float strength=(contour*.035+marks*.16)*safe*edge*(1.-u_progress*.4);
       vec3 ink=mix(vec3(.52,.19,.12),vec3(1.,.42,.25),u_dark);
-      gl_FragColor=vec4(ink,strength);
+      float alpha=clamp(strength,0.,.2);
+      gl_FragColor=vec4(ink*alpha,alpha);
     }
   `);
   if (!vertex || !fragment) { shaders.forEach(s => gl.deleteShader(s)); return null; }

@@ -4,7 +4,6 @@ import Link from "./link";
 import { Header, Footer, Arrow } from "./components";
 import StrategyHero from "./strategy-hero";
 import ClientLogos from "./client-logos";
-import ScrollFocus from "./scroll-focus";
 import { projects, services, engagements, site, credentials } from "./data";
 
 const order=["nike-air-max","adobe-firefly","nba-microsoft","raptors-vince-carter","neurogenesis","protopica-artechouse"];
@@ -12,7 +11,7 @@ const work=order.map(slug=>projects.find(p=>p.slug===slug)!);
 export default function Home(){
  const [filter,setFilter]=useState("All work"),[active,setActive]=useState(0);
  const selectedProject=projects.find(p=>p.slug===services[active].project);
- return <><Header/><ScrollFocus/><main id="main" tabIndex={-1}>
+ return <><Header/><main id="main" tabIndex={-1}>
   <StrategyHero/>
   <section className="trust-section section" id="credentials" data-focus-reveal>
    <ClientLogos />

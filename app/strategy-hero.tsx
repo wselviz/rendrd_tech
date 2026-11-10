@@ -142,7 +142,17 @@ export default function StrategyHero(){
     <h1 aria-label="RENDRD Media"><span className="sr-only">RENDRD Media</span>{letters.map((letter,i)=><span aria-hidden="true" key={i} className={"identity-letter identity-letter-"+i}>{letter}</span>)}</h1>
     <svg className="identity-bonds" aria-hidden="true">{bonds.map(([a,b])=><g className="identity-bond" key={a+"-"+b}><path/><circle r="1.6"/></g>)}</svg>
    </div>
-   <div className="strategy-copy"><p className="hero-category">Strategy &amp; creative technology</p><h2>Technology your team<br/><span>can put to work.</span></h2><p>RENDRD helps marketing and sales teams choose the right technology, build useful tools, and create campaigns that connect with customers.</p><div className="strategy-actions"><a href="#contact" className="pill">Discuss your priorities <Arrow/></a><a href="#work" className="strategy-work-link">See the work <Arrow/></a></div></div>
+   <div className="strategy-copy">
+    <p className="hero-category">For marketing &amp; sales teams</p>
+    <h2>Technology strategy.<br/><span>Campaigns that connect.</span></h2>
+    <p>RENDRD is a consultancy and creative studio. We help your team decide what to adopt, build it, and bring it to market.</p>
+    <ul className="hero-deliverables" aria-label="What you can get from RENDRD">
+     <li><strong>A clear roadmap.</strong> Technology choices, priorities, and guardrails.</li>
+     <li><strong>A working demo.</strong> Prototypes and tools your team can put to use.</li>
+     <li><strong>A campaign ready to launch.</strong> Content that makes your offer clear.</li>
+    </ul>
+    <div className="strategy-actions"><a href="#contact" className="pill">Talk about your project <Arrow/></a><a href="#work" className="strategy-work-link">See client work <Arrow/></a></div>
+   </div>
    <button className="identity-toggle" aria-label={paused?"Resume animation":"Pause animation"} title={paused?"Resume animation":"Pause animation"} aria-pressed={paused} onClick={()=>setPaused(p=>!p)}><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true">{paused?<path fill="currentColor" d="M5 3 17 10 5 17Z"/>:<path fill="currentColor" d="M4 3h4v14H4zM12 3h4v14h-4z"/>}</svg></button>
   </div>
  </section>;

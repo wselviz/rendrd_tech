@@ -2,7 +2,7 @@ export const site = {
   name: "RENDRD",
   email: "selviz@rendrd.com",
   url: "https://rendrd.tech",
-  description: "Technology strategy and governance, working prototypes, consumer campaigns, and sales enablement. RENDRD Media, led by advisor and educator Will Selviz.",
+  description: "RENDRD is a consultancy and creative studio for marketing and sales teams. Get a technology roadmap, a working prototype or demo, or a campaign ready to launch.",
   deck: "https://docs.google.com/presentation/d/13aoEyvk31l3CzoDFnnHiy8CodPuHPdgG-d8-90Wz5cs/edit",
 };
 

@@ -10,6 +10,7 @@ import "./theme.css";
 import "./readability.css";
 import "./nike.css";
 import "./signal.css";
+import "./clarity.css";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url), title: {default:"RENDRD | Technology strategy & creative advisory",template:"%s | RENDRD"}, description:site.description,
   alternates:{canonical:"/"},

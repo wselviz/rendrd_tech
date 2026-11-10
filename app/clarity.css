@@ -1,0 +1,35 @@
+/* Content stays readable independently of the decorative canvas or scroll state. */
+.strategy-hero{--hero-height:clamp(840px,calc(100svh - 68px),1000px);height:auto}
+.strategy-frame{position:relative;background:var(--ground)}
+.strategy-copy{top:29%;left:36%;max-width:1000px;padding:28px 30px 32px;background:var(--ground);isolation:isolate}
+.strategy-copy>p.hero-category{font-size:18px;margin-bottom:18px}
+.strategy-copy h2{font-size:clamp(40px,3.65vw,68px);line-height:1.08;letter-spacing:-.045em;margin-bottom:22px}
+.strategy-copy h2 span{color:var(--ink)}
+.strategy-copy>p:not(.hero-category){font-size:20px;line-height:1.5;max-width:740px;margin-bottom:22px}
+.hero-deliverables{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:12px;max-width:780px}
+.hero-deliverables li{font:400 18px/1.45 Arial,Helvetica,sans-serif;padding-left:18px;position:relative}
+.hero-deliverables li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;background:var(--accent)}
+.hero-deliverables strong{font-weight:700}
+.is-awaiting-focus{filter:none;transform:none}
+@media(min-width:1101px) and (max-height:760px){.strategy-hero{height:auto}}
+@media(max-width:1100px){
+ .strategy-hero{--hero-height:auto;height:auto}
+ .strategy-frame{height:auto;display:flex;flex-direction:column;padding:24px var(--gutter) 35px;overflow:hidden}
+ .strategy-copy{order:0;position:relative;inset:auto;padding:0;margin:10px 0 35px;max-width:760px}
+ .strategy-copy h2{font-size:clamp(35px,5.8vw,58px)}
+ .strategy-copy>p:not(.hero-category){font-size:20px}
+ .identity-stage{order:1;position:relative;inset:auto;width:100%;height:400px;margin:0 0 16px}
+ .identity-toggle{bottom:28px}
+}
+@media(max-width:760px){
+ .strategy-frame{padding-top:16px}
+ .strategy-copy{margin:12px 0 35px}
+ .strategy-copy>p.hero-category{font-size:16px;margin-bottom:16px}
+ .strategy-copy h2{font-size:clamp(32px,8.5vw,52px);margin-bottom:20px}
+ .strategy-copy>p:not(.hero-category){font-size:18px;line-height:1.5;margin-bottom:22px}
+ .hero-deliverables{gap:13px;margin-bottom:26px}
+ .hero-deliverables li{font-size:17px;line-height:1.45}
+ .hero-deliverables strong{display:block}
+ .strategy-actions{gap:16px 22px}
+ .identity-stage{height:clamp(310px,85vw,400px)}
+}
